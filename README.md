@@ -29,7 +29,7 @@ To quick start you can see [Get Started👇](#start-deploying).
 |`nat_gw`|*(Optional)* Controls if a nat gateway route should be created to give internet access to the private subnets|*boolen*|false|
 |`cluster_name`|*(Optional)* Name of the EKS cluster|*string*|"kubernetesCluster"|
 |`instance_type`|*(Optional)* List of instance types associated with the EKS Node Group|*list(string)*|["t3.medium"]|
-|`node_size`|*(Optional)* Configuration block with scaling settings contains `desired_size` which is Desired number of worker nodes, `max_size` which is maximum number of worker nodes, and `min_size` which is minium number of worker nodes|*object*|desired_size=1,max_size=2,min_size=1
+|`node_size`|*(Optional)* Configuration block with scaling settings contains `desired_size` which is Desired number of worker nodes, `max_size` which is maximum number of worker nodes, and `min_size` which is minium number of worker nodes|*object*|desired_size=1, max_size=2, min_size=1
 |`ssh_key`|*(Required)* which is EC2 Key Pair name that provides access for remote communication with the worker nodes in the EKS Node Group|*string*|
 
 #### Enter Terraform Variables

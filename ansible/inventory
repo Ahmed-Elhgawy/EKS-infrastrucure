@@ -1,0 +1,5 @@
+[node_workers]
+node_workers_ip
+
+[node_workers:vars]
+ansible_ssh_private_key_file = ~/.ssh/id_rsa

@@ -1,0 +1,27 @@
+---
+- name: Install Docker in k8s nodes
+  hosts: node_workers
+  gather_facts: false
+  tasks:
+    - name: Install Docker
+      ansible.builtin.yum:
+        name: docker
+        state: present
+        update_cache: true
+      notify:
+        - Start Docker
+        - Edit permission
+
+  handlers:
+    - name: Start Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Edit permission
+      ansible.builtin.file:
+        path: /var/run/docker.sock
+        owner: root
+        group: docker
+        mode: "0662"

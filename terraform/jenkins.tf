@@ -15,7 +15,7 @@ resource "kubernetes_namespace" "jenkins" {
   depends_on = [module.eks]
 }
 
-# *********************** CREATE JENKINS ADMIN SERVICEZCCOUNT ***********************
+# *********************** CREATE JENKINS ADMIN SERVICEACCOUNT ***********************
 resource "kubernetes_service_account" "jenkins_admin" {
   metadata {
     name      = "jenkins-admin"
@@ -72,14 +72,8 @@ resource "helm_release" "jenkins" {
   chart      = "jenkins"
   namespace  = "jenkins"
 
-  set {
-    name  = "persistence.enabled"
-    value = false
-  }
-
   depends_on = [
-    null_resource.run_ansible_playbook,
     kubernetes_namespace.jenkins,
-    kubernetes_cluster_role_binding.jenkins_admin_crb
+    kubernetes_cluster_role_binding.jenkins_admin_crb,
   ]
 }

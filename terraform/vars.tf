@@ -35,7 +35,7 @@ variable "cluster_name" {
 
 variable "instance_types" {
   type    = list(string)
-  default = ["t3.medium"]
+  default = ["t2.medium"]
 }
 
 variable "node_size" {
@@ -52,5 +52,25 @@ variable "node_size" {
 }
 
 variable "ssh_key" {
+  type = string
+}
+
+variable "rds_creatation" {
+  type    = bool
+  default = false
+}
+
+variable "db_name" {
   type    = string
+  default = "kubernetes_DB"
+}
+
+variable "username" {
+  type    = string
+  default = "root"
+}
+
+variable "password" {
+  type    = string
+  default = "rootdb123"
 }

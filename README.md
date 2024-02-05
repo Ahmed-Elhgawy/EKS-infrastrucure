@@ -94,7 +94,6 @@ terraform init && terraform plan
 4. Apply terraform code
 ```
 terraform apply -auto-approve
-
 ```
 
 ## Jenkins

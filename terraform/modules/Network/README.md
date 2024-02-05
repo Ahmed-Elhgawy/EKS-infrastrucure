@@ -10,7 +10,7 @@ Module Arguments:
 |`availability_zones`|*(Required)* AZ for the subnet. Need to be in same length or longer than `public_subnets_cidr` or `private_subnets_cidr`|
 |`nat_gw`|*(Optional)* Controls if a nat gateway route should be created to give internet access to the private subnets. ***Default: false***|
 
-Module Attribute:
+Module Attributes:
 |Attribute|Description|
 |:---|:---|
 |`vpc_id`|The ID of the VPC.|
